@@ -1,0 +1,75 @@
+public class StrongPassword{
+
+     public static void main(String []args){
+        int len=3;
+        String s="Ab9";
+        int count=0;
+        if(s.length()<6)
+        {
+            count++;
+        }
+        int flag=0;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(ch>='A'&&ch<='Z')
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            count++;
+        }
+        flag=0;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(ch>='a'&&ch<='z')
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            count++;
+        }
+        flag=0;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if(ch>='0'&&ch<='9')
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            count++;
+        }
+        flag=0;
+        for(int i=0;i<s.length();i++)
+        {
+            char ch=s.charAt(i);
+            if((ch>='!'&&ch<='/') || (ch>=':'&&ch<='@'))
+            {
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0)
+        {
+            count++;
+        }
+        if(count!=0){
+        System.out.println(count);
+        }
+        else
+        {
+            System.out.println("STRONG PASSWORD");
+        }
+     }
+}
